@@ -13,17 +13,12 @@ This script automates the process of enumerating and scanning subdomains based o
 If you have Go installed and configured (i.e. with $GOPATH/bin in your $PATH):
 
 ```
-go install github.com/TaurusOmar/crt.sh@latest
+go install github.com/bayonasam/crt.sh@latest
 ```
 
 ## Usage
 
 ```
-crt.sh hackerone.com
+crt.sh -d {targetdomain} -o {output}
 ```
 
-## Output
-
-```
-/UserHomeDir/result_directory/domain.com.crt.txt
-```
