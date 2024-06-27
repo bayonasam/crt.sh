@@ -69,6 +69,12 @@ func main() {
 	}
 	defer resp.Body.Close()
 
+	// Check if the Content-Type is application/json
+	contentType := resp.Header.Get("Content-Type")
+	if !strings.Contains(contentType, "application/json") {
+		log.Fatalf("Error: Expected JSON response, got %s", contentType)
+	}
+
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatalf("Error: %v", err)
